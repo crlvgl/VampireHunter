@@ -5,7 +5,11 @@ using UnityEngine.AI;
 
 public class ClickAgentController : MonoBehaviour
 {
-    private Vector3 target;
+     Vector3 target;
+     Vector3 playerposition;
+     Vector3 ownposition;
+     float distance;
+     public float treshold = 10.0f;
 
     // import agent component
     NavMeshAgent agent;
@@ -23,20 +27,19 @@ public class ClickAgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetTargetPosition();
-        MoveAgent();
-    }
-
-    void SetTargetPosition()
-    {
-        if (Input.GetMouseButtonDown(0))
+        playerposition = GameObject.Find("player").transform.position;
+        ownposition = transform.position;
+        distance = Vector3.Distance(playerposition, ownposition);
+        Debug.Log("playerposition: "+ playerposition + "; ownposition: " + ownposition + "; distance: " + distance);
+        if (distance <= treshold)
         {
-            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log("should move");
+            MoveAgent();
         }
     }
 
     void MoveAgent()
     {
-        agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
+        agent.SetDestination(new Vector3(playerposition.x, playerposition.y, transform.position.z));
     }
 }
