@@ -8,18 +8,19 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D body;
 
     // variables
-    float horizontal;
-    float vertical;
-    bool sprint;
-    bool evade;
-    bool controller = false;
+    float horizontal; // horizontal value of left joystick / A D keys
+    float vertical; // vertical value of left joystick / W S keys
+    bool sprint; // boolean with sprint option
+    bool evade; // boolean with evasion option
+    bool walk; // boolean with walking option
     
     // modifiable variables
-    public float moveLimiter = 0.7f;
-    public float sprintModifier = 2.0f;
-    public float evadeModifier = 50.0f;
-    public float runSpeed = 20.0f;
-    public string inputType = "keyboard"; // keyboard or controller
+    public float moveLimiter = 0.7f; // movement speed limiter for keyboard inputs
+    public float walkModifier = 0.5f; // modifier for walking speed from normal speed
+    public float sprintModifier = 2.0f; // modifier for sprinting speed from normal speed
+    public float evadeModifier = 50.0f; // modifier for evasion speed from normal speed
+    public float runSpeed = 20.0f; // normal walking speed
+    public bool controller = false; // input type; false = keyboard, true = controller
 
     // Start is called before the first frame update
     void Start()
@@ -37,30 +38,54 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         
-        // determine if controller or keyboard is used
+        // determine if controller or keyboard is used (if keyboard and axis 0 < value < 1 = controller)
         if (controller == false && ((vertical > 0 && vertical < 1) || (horizontal > 0 && horizontal < 1)))
         {
+            // set input type to controller
             controller = true;
-            inputType = "controller";
         }
-        // differentiate between controller and keyboard inputs
-        if (inputType == "controller")
+        // if controller and w a s d keys are used
+        else if (controller == true && (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d")))
         {
-            // get true for sprint and evade if triggered
-            sprint = Input.GetKey("joystick button 0");
-            evade = Input.GetKeyDown("joystick button 4");
+            // set input type to keyboard
+            controller = false;
         }
-        else if (inputType == "keyboard")
+        // get true for sprint and evade if triggered
+        sprint = false;
+        evade = false;
+        // for sprint
+        if (Input.GetKey("joystick button 0") || Input.GetKey("left shift"))
         {
-            // get true for sprint and evade if triggered
-            sprint = Input.GetKey("left shift");
-            evade = Input.GetKeyDown("left ctrl");
+            sprint = true;
+        }
+        // for evade
+        if (Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("left ctrl"))
+        {
+            evade = true;
+        }
+        // for walking
+        // if key is pressed or player walks
+        if (Input.GetKeyDown("joystick button 7") || Input.GetKeyDown("left alt") || evade || sprint)
+        {
+            // if player walks or sprints / evades
+            if (walk || evade || sprint)
+            {
+                // stop walking
+                walk = false;
+            }
+            // if player doesnt walk or sprint / evade
+            else if (walk == false)
+            {
+                // start walking
+                walk = true;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if (inputType == "keyboard")
+        // if keyboard is used
+        if (controller == false)
         {
             // if two axes are triggered simultaniously, values get reduced to avoid double speed on axis
             // not needed for controllers
@@ -79,6 +104,11 @@ public class PlayerMovement : MonoBehaviour
         else if (sprint)
         {
             body.velocity = new Vector2(horizontal * runSpeed * sprintModifier, vertical * runSpeed * sprintModifier);
+        }
+        // while walk is true, movement gets multiplied constantly
+        else if (walk)
+        {
+            body.velocity = new Vector2(horizontal * runSpeed * walkModifier, vertical * runSpeed * walkModifier);
         }
         // anything else will trigger normal movement
         else
