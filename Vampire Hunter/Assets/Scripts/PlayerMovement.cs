@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float vertical;
     bool sprint;
     bool evade;
-    bool entered = false;
+    bool controller = false;
     
     // modifiable variables
     public float moveLimiter = 0.7f;
@@ -31,24 +31,28 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // get WASD/Arrow/Controller inputs !!controller currently not recommended!!
-        // remove 1 for up/right, -1 for down/left
+        // get WASD/Arrow/Controller inputs
+        // 1 for up/right, -1 for down/left
         // dynamic return values for controllers
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        // get true for sprint and evade
-        if (entered == false && ((vertical > 0 && vertical < 1) || (horizontal > 0 && horizontal < 1)))
+        
+        // determine if controller or keyboard is used
+        if (controller == false && ((vertical > 0 && vertical < 1) || (horizontal > 0 && horizontal < 1)))
         {
-            entered = true;
+            controller = true;
             inputType = "controller";
         }
+        // differentiate between controller and keyboard inputs
         if (inputType == "controller")
         {
+            // get true for sprint and evade if triggered
             sprint = Input.GetKey("joystick button 0");
             evade = Input.GetKeyDown("joystick button 4");
         }
         else if (inputType == "keyboard")
         {
+            // get true for sprint and evade if triggered
             sprint = Input.GetKey("left shift");
             evade = Input.GetKeyDown("left ctrl");
         }
@@ -59,8 +63,7 @@ public class PlayerMovement : MonoBehaviour
         if (inputType == "keyboard")
         {
             // if two axes are triggered simultaniously, values get reduced to avoid double speed on axis
-            // not needed for controllers, so when controllers shuold be used, solution needed
-            // thank me later for extra work, future me
+            // not needed for controllers
             if (horizontal != 0 && vertical != 0)
             {
                 horizontal *= moveLimiter;
