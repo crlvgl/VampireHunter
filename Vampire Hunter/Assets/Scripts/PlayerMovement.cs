@@ -10,15 +10,18 @@ public class PlayerMovement : MonoBehaviour
     // variables
     float horizontal; // horizontal value of left joystick / A D keys
     float vertical; // vertical value of left joystick / W S keys
-    bool sprint; // boolean with sprint option
-    bool evade; // boolean with evasion option
-    bool walk; // boolean with walking option
+    bool sprint = false; // boolean with sprint option
+    bool evade = false; // boolean with evasion option, 2 frames (doubles)
+    bool evadeAgain = false; // boolean to deactivade evasion next frame
+    int evadeCount; // amount of remaining evasion frames
+    bool walk = false; // boolean with walking option
     
     // modifiable variables
     public float moveLimiter = 0.7f; // movement speed limiter for keyboard inputs
     public float walkModifier = 0.5f; // modifier for walking speed from normal speed
     public float sprintModifier = 2.0f; // modifier for sprinting speed from normal speed
     public float evadeModifier = 50.0f; // modifier for evasion speed from normal speed
+    public int evadeFrames = 2; // amount of frames to evade
     public float runSpeed = 20.0f; // normal walking speed
     public bool controller = false; // input type; false = keyboard, true = controller
 
@@ -52,14 +55,13 @@ public class PlayerMovement : MonoBehaviour
         }
         // get true for sprint and evade if triggered
         sprint = false;
-        evade = false;
         // for sprint
         if (Input.GetKey("joystick button 0") || Input.GetKey("left shift"))
         {
             sprint = true;
         }
         // for evade
-        if (Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("left ctrl"))
+        if ((Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("left ctrl")) && evadeAgain == false)
         {
             evade = true;
         }
@@ -95,10 +97,26 @@ public class PlayerMovement : MonoBehaviour
                 vertical *= moveLimiter;
             }
         }
-        // if evade is true, movement gets multipied once
-        if (evade)
+        // if evade is true, movement gets multipied for evade frames count
+        if (evade || evadeAgain)
         {
             body.velocity = new Vector2(horizontal * runSpeed * evadeModifier, vertical * runSpeed * evadeModifier);
+
+            evade = false; // set evade to false
+            
+            if (evadeAgain && evadeCount == 1) // if evaded last time
+            {
+                evadeAgain = false; // deactivate evadeAgain
+            }
+            else if (evadeAgain && evadeCount > 1) // if evaded between second and seconfd to last times
+            {
+                evadeCount -= 1; // reduce remaining evasions by 1
+            }
+            else if (evadeAgain == false) // if evaded first time
+            {
+                evadeAgain = true; // activate evadeAgain
+                evadeCount = evadeFrames; // set remaining evasions
+            }
         }
         // if sprint is true, movement gets multiplied constantly
         else if (sprint)

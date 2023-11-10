@@ -490,12 +490,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536577077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d550a87c688c44342bfd6ffc4a76660c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   treshold: 7
+  targetName: player
+  pursuitRadius: 50
 --- !u!195 &536577080
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -505,9 +507,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 536577077}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 10
-  m_Acceleration: 8
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -744,8 +746,8 @@ Transform:
   m_GameObject: {fileID: 576935030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.02834, y: 0.80964184, z: 1.6266162}
-  m_LocalScale: {x: 1, y: 54.943832, z: 1}
+  m_LocalPosition: {x: -48.0592, y: 1.1585, z: 1.6266162}
+  m_LocalScale: {x: 25.061602, y: 71.116646, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 390760392}
@@ -975,8 +977,8 @@ Transform:
   m_GameObject: {fileID: 705535415}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.37166, y: 0.80964184, z: 1.6266162}
-  m_LocalScale: {x: 1, y: 54.943832, z: 1}
+  m_LocalPosition: {x: 24.8547, y: 2.3003, z: 1.6266162}
+  m_LocalScale: {x: 29.9661, y: 79.61873, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 390760392}
@@ -1011,7 +1013,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 830484270}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 10
   m_Acceleration: 10
   avoidancePriority: 50
@@ -1155,6 +1157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treshold: 7
+  targetName: player
+  pursuitRadius: 35
 --- !u!1 &857551081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,8 +1384,8 @@ Transform:
   m_GameObject: {fileID: 915766926}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -13.02834, y: -24.064758, z: 1.6266162}
-  m_LocalScale: {x: 1, y: 54.943836, z: 1}
+  m_LocalPosition: {x: -10.618, y: -35.9904, z: 1.6266162}
+  m_LocalScale: {x: 24.8513, y: 89.57577, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 390760392}
@@ -1768,10 +1772,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveLimiter: 0.8
+  walkModifier: 0.5
   sprintModifier: 2.5
-  evadeModifier: 25
+  evadeModifier: 12.5
+  evadeFrames: 2
   runSpeed: 10
-  inputType: keyboard
+  controller: 0
 --- !u!50 &1229928761
 Rigidbody2D:
   serializedVersion: 4
@@ -2012,12 +2018,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266039154}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d550a87c688c44342bfd6ffc4a76660c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   treshold: 7
+  targetName: player
+  pursuitRadius: 50
 --- !u!195 &1266039157
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2027,9 +2035,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 1266039154}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 10
-  m_Acceleration: 8
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -2745,8 +2753,8 @@ Transform:
   m_GameObject: {fileID: 1764817990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -13.02834, y: 25.135242, z: 1.6266162}
-  m_LocalScale: {x: 1, y: 54.943836, z: 1}
+  m_LocalPosition: {x: -12.4257, y: 37.2224, z: 1.6266162}
+  m_LocalScale: {x: 25.1743, y: 96.11809, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 390760392}
@@ -3226,12 +3234,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062729509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d550a87c688c44342bfd6ffc4a76660c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   treshold: 7
+  targetName: player
+  pursuitRadius: 50
 --- !u!195 &2062729512
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3241,7 +3251,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2062729509}
   m_Enabled: 1
   m_AgentTypeID: -1372625422
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 10
   m_Acceleration: 10
   avoidancePriority: 50
