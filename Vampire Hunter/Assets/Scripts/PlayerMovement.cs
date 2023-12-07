@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is used to move the player character.
+/// The character can be controlled with a keyboard or a controller.
+/// The character can walk, walk faster, sprint and evade.
+/// </summary>
+
 public class PlayerMovement : MonoBehaviour
 {
     // access Rigidbody of Player

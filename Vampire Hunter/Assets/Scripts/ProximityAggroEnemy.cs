@@ -1,12 +1,14 @@
-// Script to controll agent movement
-// requires NavMesh with Navigation Surface and Navigation CollectSource2D
-// requires onjects with Navigation Modifier and declaration as (not) walkable
-// requires agent with NavMeshAgent
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+/// <summary>
+/// Script to controll agent movement
+/// requires NavMesh with Navigation Surface and Navigation CollectSource2D
+/// requires onjects with Navigation Modifier and declaration as (not) walkable
+/// requires agent with NavMeshAgent
+/// </summary>
 
 public class ClickAgentController : MonoBehaviour
 {

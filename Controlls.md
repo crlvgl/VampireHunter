@@ -45,6 +45,7 @@ ______
 | D            | Move Right |
 | Left Shift   | Sprint     |
 | Left Control | Evade      |
+| Left Alt     | Walk       |
 
 [Unity - Input Manager / Button Mapping](https://docs.unity3d.com/Manual/class-InputManager.html)
 
