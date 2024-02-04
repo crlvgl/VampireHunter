@@ -66,10 +66,26 @@ public class PlayerMovement : MonoBehaviour
         {
             sprint = true;
         }
+        if (horizontal == 0 && vertical == 0)
+        {
+            PlayerAnimation.walk = false;
+            PlayerAnimation.idle = true;
+            PlayerAnimation.dash = false;
+        }
+        else
+        {
+            PlayerAnimation.walk = true;
+            PlayerAnimation.idle = false;
+            PlayerAnimation.dash = false;
+        }
+
         // for evade
         if ((Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("left ctrl")) && evadeAgain == false)
         {
             evade = true;
+            PlayerAnimation.walk = false;
+            PlayerAnimation.idle = false;
+            PlayerAnimation.dash = true;
         }
         // for walking
         // if key is pressed or player walks
@@ -109,6 +125,9 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(horizontal * runSpeed * evadeModifier, vertical * runSpeed * evadeModifier);
 
             evade = false; // set evade to false
+            PlayerAnimation.walk = false;
+            PlayerAnimation.idle = false;
+            PlayerAnimation.dash = true;
             
             if (evadeAgain && evadeCount == 1) // if evaded last time
             {
