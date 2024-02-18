@@ -22,19 +22,19 @@ public class PlayerAnimation : MonoBehaviour
         Debug.Log(walk + " " + dash + " " + idle);
         if (walk)
         {
-            animator.SetBool("Walking_Unarmed", true);
+            animator.SetBool("Walking_Unarmed_Left", true);
             animator.SetBool("Idle_Unarmed", false);
             animator.SetBool("Dash_Unarmed", false);
         }
         else if(dash)
         {
-            animator.SetBool("Walking_Unarmed", false);
+            animator.SetBool("Walking_Unarmed_Left", false);
             animator.SetBool("Idle_Unarmed", false);
             animator.SetBool("Dash_Unarmed", true);
         }
         else if(idle)
         {
-            animator.SetBool("Walking_Unarmed", false);
+            animator.SetBool("Walking_Unarmed_Left", false);
             animator.SetBool("Idle_Unarmed", true);
             animator.SetBool("Dash_Unarmed", false);
         }
