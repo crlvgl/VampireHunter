@@ -68,22 +68,172 @@ public class PlayerMovement : MonoBehaviour
         }
         if (horizontal == 0 && vertical == 0)
         {
-            PlayerAnimation.walk = false;
+            PlayerAnimation.walk_left = false;
+            PlayerAnimation.walk_right = false;
+            PlayerAnimation.walk_up = false;
+            PlayerAnimation.walk_down = false;
             PlayerAnimation.idle = true;
             PlayerAnimation.dash = false;
         }
         else
         {
-            PlayerAnimation.walk = true;
-            PlayerAnimation.idle = false;
-            PlayerAnimation.dash = false;
+            if (horizontal == 0)
+            {
+                if (vertical > 0)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = true;
+                    PlayerAnimation.walk_down = false;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else if (vertical < 0)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = false;
+                    PlayerAnimation.walk_down = true;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+            }
+            else if (horizontal > 0)
+            {
+                if (vertical == 0)
+                {
+                    PlayerAnimation.walk_left = true;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = false;
+                    PlayerAnimation.walk_down = false;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else if (vertical == 1)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = true;
+                    PlayerAnimation.walk_down = false;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else if (vertical == -1)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = false;
+                    PlayerAnimation.walk_down = true;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else
+                {
+                    if (45 >= Mathf.Abs(Mathf.Acos(horizontal / Mathf.Sqrt(Mathf.Pow(horizontal, 2) + Mathf.Pow(vertical, 2)))) * Mathf.Rad2Deg)
+                    {
+                        PlayerAnimation.walk_left = true;
+                        PlayerAnimation.walk_right = false;
+                        PlayerAnimation.walk_up = false;
+                        PlayerAnimation.walk_down = false;
+                        PlayerAnimation.idle = false;
+                        PlayerAnimation.dash = false;
+                    }
+                    else
+                    {
+                        if (vertical > 0)
+                        {
+                            PlayerAnimation.walk_left = false;
+                            PlayerAnimation.walk_right = false;
+                            PlayerAnimation.walk_up = true;
+                            PlayerAnimation.walk_down = false;
+                            PlayerAnimation.idle = false;
+                            PlayerAnimation.dash = false;
+                        }
+                        else if (vertical < 0)
+                        {
+                            PlayerAnimation.walk_left = false;
+                            PlayerAnimation.walk_right = false;
+                            PlayerAnimation.walk_up = false;
+                            PlayerAnimation.walk_down = true;
+                            PlayerAnimation.idle = false;
+                            PlayerAnimation.dash = false;
+                        }
+                    }
+                }
+            }
+            else if (horizontal < 0)
+            {
+                if (vertical == 0)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = true;
+                    PlayerAnimation.walk_up = false;
+                    PlayerAnimation.walk_down = false;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else if (vertical == 1)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = true;
+                    PlayerAnimation.walk_down = false;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else if (vertical == -1)
+                {
+                    PlayerAnimation.walk_left = false;
+                    PlayerAnimation.walk_right = false;
+                    PlayerAnimation.walk_up = false;
+                    PlayerAnimation.walk_down = true;
+                    PlayerAnimation.idle = false;
+                    PlayerAnimation.dash = false;
+                }
+                else
+                {
+                    Debug.Log(horizontal + " " + vertical);
+                    if (45 >= Mathf.Abs(Mathf.Acos((horizontal * -1) / Mathf.Sqrt(Mathf.Pow(horizontal, 2) + Mathf.Pow(vertical, 2)))) * Mathf.Rad2Deg)
+                    {
+                        PlayerAnimation.walk_left = false;
+                        PlayerAnimation.walk_right = true;
+                        PlayerAnimation.walk_up = false;
+                        PlayerAnimation.walk_down = false;
+                        PlayerAnimation.idle = false;
+                        PlayerAnimation.dash = false;
+                    }
+                    else
+                    {
+                        if (vertical > 0)
+                        {
+                            PlayerAnimation.walk_left = false;
+                            PlayerAnimation.walk_right = false;
+                            PlayerAnimation.walk_up = true;
+                            PlayerAnimation.walk_down = false;
+                            PlayerAnimation.idle = false;
+                            PlayerAnimation.dash = false;
+                        }
+                        else if (vertical < 0)
+                        {
+                            PlayerAnimation.walk_left = false;
+                            PlayerAnimation.walk_right = false;
+                            PlayerAnimation.walk_up = false;
+                            PlayerAnimation.walk_down = true;
+                            PlayerAnimation.idle = false;
+                            PlayerAnimation.dash = false;
+                        }
+                    }
+                }
+            }
         }
 
         // for evade
         if ((Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("left ctrl")) && evadeAgain == false)
         {
             evade = true;
-            PlayerAnimation.walk = false;
+            PlayerAnimation.walk_left = false;
+            PlayerAnimation.walk_up = false;
+            PlayerAnimation.walk_down = false;
             PlayerAnimation.idle = false;
             PlayerAnimation.dash = true;
         }
@@ -125,7 +275,9 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(horizontal * runSpeed * evadeModifier, vertical * runSpeed * evadeModifier);
 
             evade = false; // set evade to false
-            PlayerAnimation.walk = false;
+            PlayerAnimation.walk_left = false;
+            PlayerAnimation.walk_up = false;
+            PlayerAnimation.walk_down = false;
             PlayerAnimation.idle = false;
             PlayerAnimation.dash = true;
             
