@@ -16,6 +16,11 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.disableAllPause == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (pathToScene != null && pathToScene != "" && UnityEngine.SceneManagement.SceneManager.loadedSceneCount == 1)

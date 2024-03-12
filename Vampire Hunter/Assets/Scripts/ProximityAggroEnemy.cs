@@ -43,6 +43,11 @@ public class ClickAgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.disableAllPause == true)
+        {
+            return;
+        }
+
         // get coordinates of target
         targetPosition = GameObject.Find(targetName).transform.position;
         // get own coordinates

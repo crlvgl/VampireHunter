@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.disableAllPause == true)
+        {
+            return;
+        }
+
         // get WASD/Arrow/Controller inputs
         // 1 for up/right, -1 for down/left
         // dynamic return values for controllers
@@ -258,6 +263,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (PauseMenu.disableAllPause == true)
+        {
+            return;
+        }
+
         // if keyboard is used
         if (controller == false)
         {
