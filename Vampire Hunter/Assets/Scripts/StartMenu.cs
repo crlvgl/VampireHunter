@@ -130,6 +130,7 @@ public class StartMenu : MonoBehaviour
     IEnumerator LoadNewScene()
     {
         AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pathToScene);
+        __staticInfoClass.sceneToLoad = pathToScene;
 
         while (!asyncLoad.isDone)
         {
@@ -140,6 +141,7 @@ public class StartMenu : MonoBehaviour
     IEnumerator LoadSavedScene()
     {
         __staticInfoClass.loadScene = true;
+        __staticInfoClass.sceneToLoad = "Assets/Scenes/" + PlayerPrefs.GetString("openScene") + ".unity";
 
         AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pathToScene);
 

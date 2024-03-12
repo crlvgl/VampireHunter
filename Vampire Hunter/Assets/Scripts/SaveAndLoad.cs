@@ -33,6 +33,7 @@ public class SaveAndLoad : MonoBehaviour
 
     private void SaveGame()
     {
+        PlayerPrefs.SetString("openScene", UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         // you still gotta implenent this
         // need to look what you need
         // will be the same as above
