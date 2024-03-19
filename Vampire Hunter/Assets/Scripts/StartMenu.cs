@@ -7,7 +7,10 @@ public class StartMenu : MonoBehaviour
 {
     private AudioSource audioSource;
     [Header("Loading Settings")]
+    [Tooltip("Path to LoadingScreen Scene")]
     public string pathToScene;
+    [Tooltip("Path to First Scene after LoadingScreen")]
+    public string pathToFirstScene;
     [Tooltip("LoadMode: 'new' loads new game, 'load' loads saved game, 'quit' closes game")]
     public string LoadMode;
 
@@ -130,7 +133,7 @@ public class StartMenu : MonoBehaviour
     IEnumerator LoadNewScene()
     {
         AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pathToScene);
-        __staticInfoClass.sceneToLoad = pathToScene;
+        __staticInfoClass.sceneToLoad = pathToFirstScene;
 
         while (!asyncLoad.isDone)
         {

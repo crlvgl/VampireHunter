@@ -17,6 +17,10 @@ public class LoadingScreen : MonoBehaviour
         {
             pathToScene = __staticInfoClass.sceneToLoad;
         }
+        if (__staticInfoClass.timeToLoad != 0)
+        {
+            waitTime = __staticInfoClass.timeToLoad;
+        }
     }
 
     // Update is called once per frame

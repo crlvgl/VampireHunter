@@ -18,10 +18,11 @@ public class SaveAndLoad : MonoBehaviour
             SaveGame();
             SaveLoadExitButton.saveGame = false;
         }
-        else if (SaveLoadExitButton.loadGame == true)
+        else if (SaveLoadExitButton.loadGame == true || __staticInfoClass.loadScene == true)
         {
             LoadGame();
             SaveLoadExitButton.loadGame = false;
+            __staticInfoClass.loadScene = false;
         }
     }
 

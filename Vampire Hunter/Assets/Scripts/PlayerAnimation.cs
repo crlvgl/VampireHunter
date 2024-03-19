@@ -28,43 +28,43 @@ public class PlayerAnimation : MonoBehaviour
         //Debug.Log(walk_left + " " + walk_up + " " + walk_down + " " + dash + " " + idle);
         if (walk_left || walk_right)
         {
-            animator.SetBool("Walking_Unarmed_Left", true);
-            animator.SetBool("Walking_Unarmed_Up", false);
-            animator.SetBool("Walking_Unarmed_Down", false);
-            animator.SetBool("Idle_Unarmed", false);
-            animator.SetBool("Dash_Unarmed", false);
+            animator.SetBool("Walking_Left", true);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", false);
         }
         else if (walk_up)
         {
-            animator.SetBool("Walking_Unarmed_Left", false);
-            animator.SetBool("Walking_Unarmed_Up", true);
-            animator.SetBool("Walking_Unarmed_Down", false);
-            animator.SetBool("Idle_Unarmed", false);
-            animator.SetBool("Dash_Unarmed", false);
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", true);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", false);
         }
         else if (walk_down)
         {
-            animator.SetBool("Walking_Unarmed_Left", false);
-            animator.SetBool("Walking_Unarmed_Up", false);
-            animator.SetBool("Walking_Unarmed_Down", true);
-            animator.SetBool("Idle_Unarmed", false);
-            animator.SetBool("Dash_Unarmed", false);
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", true);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", false);
         }
         else if(idle)
         {
-            animator.SetBool("Walking_Unarmed_Left", false);
-            animator.SetBool("Walking_Unarmed_Up", false);
-            animator.SetBool("Walking_Unarmed_Down", false);
-            animator.SetBool("Idle_Unarmed", true);
-            animator.SetBool("Dash_Unarmed", false);
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", true);
+            animator.SetBool("Dash", false);
         }
         else if(dash)
         {
-            animator.SetBool("Walking_Unarmed_Left", false);
-            animator.SetBool("Walking_Unarmed_Up", false);
-            animator.SetBool("Walking_Unarmed_Down", false);
-            animator.SetBool("Idle_Unarmed", false);
-            animator.SetBool("Dash_Unarmed", true);
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", true);
         }
         if (walk_right)
         {

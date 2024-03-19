@@ -1,0 +1,555 @@
+fileFormatVersion: 2
+guid: b699d9a92628e7845bc201e92d9ab3ba
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Moos_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 902
+        width: 145
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9def1df902f3c4d80818caee76e560
+      internalID: 1720429205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_1
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 824
+        width: 337
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2943601ebc3598345b77a2ade3a9be58
+      internalID: -1683086330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_2
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 833
+        width: 446
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3e7a394f533384f901b4a9fd842ad8
+      internalID: -741736860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 669
+        width: 263
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4cf18d8e7b98740ba5b5a80c0423d6
+      internalID: 1670083214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_5
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 593
+        width: 443
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672e004727e61a444958347668afa643
+      internalID: 1606606446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_6
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 531
+        width: 379
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f74989aa8cdae4d82820f1c98c507b
+      internalID: -1971642360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_7
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 736
+        width: 8
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b7fda27074a2649b61e1e73235e249
+      internalID: 53535264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 494
+        width: 220
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2c7a5561392bc4d865e55e68faac5f
+      internalID: -2000619861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_9
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 386
+        width: 111
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7bed646ecc33a4aabec3a7c8d086a6
+      internalID: -328349994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_12
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 394
+        width: 75
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5e1fa0aa47e154a8c1d9b33b021e24
+      internalID: 1818387835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_14
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 386
+        width: 179
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573d715b00c77b04d97adce7db430aef
+      internalID: -1628289891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_15
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 327
+        width: 114
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9584a4948c0cff4b8e4a8dde5720a04
+      internalID: -95304945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 277
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3883511531eb62449c9096ed1c2666b
+      internalID: 1246983823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_26
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 86
+        width: 320
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4f4e38a974add40a35b219fc95f366
+      internalID: 228229612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_35
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 152
+        width: 196
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e22fd3aa07b8043a81d1d6bb4da6d2
+      internalID: 1426935656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_40
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 85
+        width: 156
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb80a073a7910d4fa4a3711b0ad1710
+      internalID: -1490737223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_44
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 111
+        width: 166
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ed0773485865d4680c95d91f96da1f
+      internalID: 1972910602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moos_46
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 47
+        width: 53
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e9d5cceb17d094ca2e744fcf14fa10
+      internalID: -798356929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Moos_0: 1720429205
+      Moos_1: -1683086330
+      Moos_10: 1990648469
+      Moos_11: 2082671486
+      Moos_12: 1818387835
+      Moos_13: 285014008
+      Moos_14: -1628289891
+      Moos_15: -95304945
+      Moos_16: 1246983823
+      Moos_17: 871303808
+      Moos_18: -443598573
+      Moos_19: -1625894649
+      Moos_2: -741736860
+      Moos_20: -1155956737
+      Moos_21: -1409594499
+      Moos_22: -1897144378
+      Moos_23: 794296042
+      Moos_24: -577469581
+      Moos_25: 1482273889
+      Moos_26: 228229612
+      Moos_27: -1137481723
+      Moos_28: 2434246
+      Moos_29: -1074574657
+      Moos_3: 954659785
+      Moos_30: 1934842482
+      Moos_31: -372434996
+      Moos_32: 1797284549
+      Moos_33: 581508966
+      Moos_34: 78729015
+      Moos_35: 1426935656
+      Moos_36: -2139822027
+      Moos_37: -1084013535
+      Moos_38: -1513722910
+      Moos_39: -858990281
+      Moos_4: 1670083214
+      Moos_40: -1490737223
+      Moos_41: 1446449127
+      Moos_42: -658442216
+      Moos_43: -11401187
+      Moos_44: 1972910602
+      Moos_45: 626492573
+      Moos_46: -798356929
+      Moos_47: -1805075819
+      Moos_48: -1030638962
+      Moos_49: 1798433507
+      Moos_5: 1606606446
+      Moos_6: -1971642360
+      Moos_7: 53535264
+      Moos_8: -2000619861
+      Moos_9: -328349994
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
