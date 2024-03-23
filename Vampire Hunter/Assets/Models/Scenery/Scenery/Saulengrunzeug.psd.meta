@@ -110,90 +110,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Saulengrunzeug_0
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 653
-        width: 272
-        height: 379
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc29dd91ab9f403468777a830277650f
-      internalID: 564345767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Saulengrunzeug_1
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 423
-        width: 93
-        height: 292
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e37a71710fe38c48b08d7c5dcc5ca96
-      internalID: -737618350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Saulengrunzeug_2
-      rect:
-        serializedVersion: 2
-        x: 1410
-        y: 570
-        width: 65
-        height: 120
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 509c44dc3af0e30469cff54e37ff24e1
-      internalID: -1541624305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Saulengrunzeug_3
-      rect:
-        serializedVersion: 2
-        x: 1438
-        y: 480
-        width: 202
-        height: 574
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ff5713b6801c734e8ce6098c5d445f7
-      internalID: 928579627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Saulengrunzeug_4
       rect:
         serializedVersion: 2
@@ -221,7 +137,7 @@ TextureImporter:
         x: 59
         y: 53
         width: 350
-        height: 427
+        height: 982
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +157,8 @@ TextureImporter:
         serializedVersion: 2
         x: 571
         y: 88
-        width: 205
-        height: 283
+        width: 259
+        height: 437
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,34 +173,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Saulengrunzeug_7
-      rect:
-        serializedVersion: 2
-        x: 738
-        y: 322
-        width: 90
-        height: 203
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db901b585240fe7429636d0c388e312d
-      internalID: 29470341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Saulengrunzeug_8
       rect:
         serializedVersion: 2
         x: 1350
         y: 97
         width: 448
-        height: 415
+        height: 960
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
