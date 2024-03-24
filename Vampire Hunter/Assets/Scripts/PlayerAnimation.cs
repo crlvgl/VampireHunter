@@ -11,6 +11,9 @@ public class PlayerAnimation : MonoBehaviour
     public static bool walk_down;
     public static bool dash;
     public static bool idle;
+    public static bool meele;
+    public static bool ranged;
+    public static bool death;
 
     SpriteRenderer sprite;
 
@@ -33,6 +36,9 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Walking_Down", false);
             animator.SetBool("Idle", false);
             animator.SetBool("Dash", false);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", false);
         }
         else if (walk_up)
         {
@@ -41,6 +47,9 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Walking_Down", false);
             animator.SetBool("Idle", false);
             animator.SetBool("Dash", false);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", false);
         }
         else if (walk_down)
         {
@@ -49,6 +58,9 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Walking_Down", true);
             animator.SetBool("Idle", false);
             animator.SetBool("Dash", false);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", false);
         }
         else if(idle)
         {
@@ -57,6 +69,9 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Walking_Down", false);
             animator.SetBool("Idle", true);
             animator.SetBool("Dash", false);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", false);
         }
         else if(dash)
         {
@@ -65,6 +80,42 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Walking_Down", false);
             animator.SetBool("Idle", false);
             animator.SetBool("Dash", true);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", false);
+        }
+        else if (meele)
+        {
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", false);
+            animator.SetBool("Melee", true);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", false);
+        }
+        else if (ranged)
+        {
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", false);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", true);
+            animator.SetBool("Death", false);
+        }
+        else if (death)
+        {
+            animator.SetBool("Walking_Left", false);
+            animator.SetBool("Walking_Up", false);
+            animator.SetBool("Walking_Down", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Dash", false);
+            animator.SetBool("Melee", false);
+            animator.SetBool("Ranged", false);
+            animator.SetBool("Death", true);
         }
         if (walk_right)
         {

@@ -8,24 +8,24 @@ _Note: all Buttons refer to a Xbox GamePad_
 
 _references and own mapping_
 
-| **Button**        | **Hunt the Night**                               | **Acane**                     | **our game** |
-| ----------------- | ------------------------------------------------ | ----------------------------- | ------------ |
-| Left Stick        | Move                                             | Move                          | Move         |
-| Right Stick       | Aim                                              | -                             |              |
-| A                 | (Menu) Submit<br/>Dash                           | Defend                        | Sprint       |
-| B                 | Special Attack                                   | Attack <br/>when aimed, shoot |              |
-| X                 | Attack<br/>(when Umbra) Teleport<br/>Interaction | -                             |              |
-| Y                 | Summon Umbra (Help)<br/>Interact                 | Special Move                  |              |
-| Dpad Up           | (Menu) Up<br/>Healing Item                       | -                             |              |
-| Dpad Down         | (Menu) Down<br/>Special Ability                  | -                             |              |
-| Dpad Left         | (Menu) Left                                      | -                             |              |
-| Dpad Right        | (Menu) Right                                     | -                             |              |
-| Start / +         |                                                  | -                             |              |
-| Menu / -          | Pause <br/>Return Menu<br/>Skip Text             | -                             |              |
-| Left Shoulder     | previous ranged Weapon<br/>Menu Left             | Dash                          | Dash         |
-| Left Shoulder 2.  | Throw                                            | Aim                           |              |
-| Right Shoulder    | next ranged Weapon<br/>Menu Right                | Special Attack 1              |              |
-| Right Shoulder 2. | Shoot                                            | Special Attack 2              |              |
+| **Button**        | **Hunt the Night**                               | **Acane**                     | **our game**      |
+| ----------------- | ------------------------------------------------ | ----------------------------- | ----------------- |
+| Left Stick        | Move                                             | Move                          | Move              |
+| Right Stick       | Aim                                              | -                             |                   |
+| A                 | (Menu) Submit<br/>Dash                           | Defend                        | Sprint            |
+| B                 | Special Attack                                   | Attack <br/>when aimed, shoot | continue Dialogue |
+| X                 | Attack<br/>(when Umbra) Teleport<br/>Interaction | -                             |                   |
+| Y                 | Summon Umbra (Help)<br/>Interact                 | Special Move                  |                   |
+| Dpad Up           | (Menu) Up<br/>Healing Item                       | -                             |                   |
+| Dpad Down         | (Menu) Down<br/>Special Ability                  | -                             |                   |
+| Dpad Left         | (Menu) Left                                      | -                             |                   |
+| Dpad Right        | (Menu) Right                                     | -                             |                   |
+| Start / +         |                                                  | -                             |                   |
+| Menu / -          | Pause <br/>Return Menu<br/>Skip Text             | -                             |                   |
+| Left Shoulder     | previous ranged Weapon<br/>Menu Left             | Dash                          | Dash              |
+| Left Shoulder 2.  | Throw                                            | Aim                           |                   |
+| Right Shoulder    | next ranged Weapon<br/>Menu Right                | Special Attack 1              |                   |
+| Right Shoulder 2. | Shoot                                            | Special Attack 2              |                   |
 
 ### Special
 
