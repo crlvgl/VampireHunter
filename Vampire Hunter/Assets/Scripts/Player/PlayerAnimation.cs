@@ -11,7 +11,7 @@ public class PlayerAnimation : MonoBehaviour
     public static bool walk_down;
     public static bool dash;
     public static bool idle;
-    public static bool meele;
+    public static bool melee;
     public static bool ranged;
     public static bool death;
 
@@ -84,7 +84,7 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("Ranged", false);
             animator.SetBool("Death", false);
         }
-        else if (meele)
+        else if (melee)
         {
             animator.SetBool("Walking_Left", false);
             animator.SetBool("Walking_Up", false);
