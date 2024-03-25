@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.disableAllPause == true)
+        if (PauseMenu.disableAllPause == true || PlayerCombat.isAttacking == true || PlayerCombat.aiming == true)
         {
             return;
         }

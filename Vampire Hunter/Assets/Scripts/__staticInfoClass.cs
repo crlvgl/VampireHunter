@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public static class __staticInfoClass
 {
     // for Loading Scenes
@@ -8,4 +10,7 @@ public static class __staticInfoClass
     // for Dialogue
     public static string dialogueTrigger = "none";
     public static string[] dialogue;
+
+    // for Player Combat
+    public static Vector2 projectileDirection;
 }
