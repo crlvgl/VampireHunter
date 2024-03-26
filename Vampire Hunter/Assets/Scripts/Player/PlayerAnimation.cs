@@ -28,7 +28,6 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(animator.runtimeAnimatorController.name);
         //Debug.Log(walk_left + " " + walk_up + " " + walk_down + " " + dash + " " + idle);
         if (walk_left || walk_right)
         {

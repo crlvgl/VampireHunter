@@ -19,6 +19,10 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.disableAllPause || PlayDialogue.disableAllDialogue)
+        {
+            return;
+        }
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 2")) && !aiming)
         {
             if (!isAttacking)

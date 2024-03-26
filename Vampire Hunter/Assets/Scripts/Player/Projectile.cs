@@ -15,6 +15,11 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.disableAllPause || PlayDialogue.disableAllDialogue)
+        {
+            return;
+        }
+        
         this.transform.position += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
     }
 }

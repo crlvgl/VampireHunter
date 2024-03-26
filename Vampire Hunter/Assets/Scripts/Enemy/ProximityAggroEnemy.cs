@@ -43,7 +43,7 @@ public class ClickAgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.disableAllPause == true)
+        if (PauseMenu.disableAllPause == true || PlayDialogue.disableAllDialogue == true)
         {
             return;
         }

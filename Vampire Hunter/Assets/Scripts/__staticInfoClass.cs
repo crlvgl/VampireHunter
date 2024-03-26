@@ -9,7 +9,13 @@ public static class __staticInfoClass
 
     // for Dialogue
     public static string dialogueTrigger = "none";
-    public static string[] dialogue;
+    public static string[] leftDialogue;
+    public static string leftDialogueName;
+    public static Sprite leftSprite;
+    public static string[] rightDialogue;
+    public static string rightDialogueName;
+    public static Sprite rightSprite;
+    public static bool lastDialogue = false;
 
     // for Player Combat
     public static Vector2 projectileDirection;
