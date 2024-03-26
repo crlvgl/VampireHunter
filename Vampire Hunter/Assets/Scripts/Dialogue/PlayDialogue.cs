@@ -27,11 +27,24 @@ public class PlayDialogue : MonoBehaviour
     private static int triggerStage = 0;
     private static string currentTrigger;
     private static int tempTriggerStage = 1;
+    public Color vampireColorTemp = new Color(255, 128, 128, 255);
+    private static Color vampireColor;
+    public Color humanColorTemp = new Color(98, 160, 240, 255);
+    private static Color humanColor;
+    public Color fangsColorTemp = new Color(196, 128, 255, 255);
+    private static Color fangsColor;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueQueue = new Queue<string>();
+        triggerListNamesQueue = new Queue<string>();
+        triggerListLengthsQueue = new Queue<int>();
+        dialogueTriggerQueue = new Queue<string>();
+
+        vampireColor = vampireColorTemp;
+        humanColor = humanColorTemp;
+        fangsColor = fangsColorTemp;
 
         TextBox = this.transform.Find("Main Camera").gameObject.transform.Find("TextBox").gameObject;
         dialogueText = TextBox.transform.Find("Canvas").gameObject.transform.Find("TextBoxText").GetComponent<TMP_Text>();
@@ -121,29 +134,29 @@ public class PlayDialogue : MonoBehaviour
         leftName.text = __staticInfoClass.leftDialogueName;
         if (__staticInfoClass.leftDialogueName == "Fangs")
         {
-            leftName.color = new Color(196, 128, 255, 255);
+            leftName.color = fangsColor;
         }
         else if (__staticInfoClass.leftDialogueName == "Corvus" || __staticInfoClass.leftDialogueName == "Nihil")
         {
-            leftName.color = new Color(98, 160, 240, 255);
+            leftName.color = humanColor;
         }
         else if (__staticInfoClass.leftDialogueName == "Miresu")
         {
-            leftName.color = new Color(255, 128, 128, 255);
+            leftName.color = vampireColor;
         }
 
         rightName.text = __staticInfoClass.rightDialogueName;
         if (__staticInfoClass.rightDialogueName == "Fangs")
         {
-            rightName.color = new Color(196, 128, 255, 255);
+            rightName.color = fangsColor;
         }
         else if (__staticInfoClass.rightDialogueName == "Corvus" || __staticInfoClass.rightDialogueName == "Nihil")
         {
-            rightName.color = new Color(98, 160, 240, 255);
+            rightName.color = humanColor;
         }
         else if (__staticInfoClass.rightDialogueName == "Miresu")
         {
-            rightName.color = new Color(255, 128, 128, 255);
+            rightName.color = vampireColor;
         }
 
         StartTalking();

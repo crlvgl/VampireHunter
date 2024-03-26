@@ -6741,6 +6741,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerListNames: []
   triggerListLengths: 
+  vampireColorTemp: {r: 1, g: 0.5019608, b: 0.5019608, a: 255}
+  humanColorTemp: {r: 0.38431373, g: 0.627451, b: 0.9411765, a: 255}
+  fangsColorTemp: {r: 0.76862746, g: 0.5019608, b: 1, a: 255}
 --- !u!1 &1520346123
 GameObject:
   m_ObjectHideFlags: 0
