@@ -19,7 +19,7 @@ public class AimLine : MonoBehaviour
     {
         mouseCoordinates = Camera.main.ScreenToWorldPoint(Input.mousePosition) - line.position;
         
-        angle = Mathf.Acos(mouseCoordinates.x / (1 + Mathf.Sqrt(Mathf.Pow(mouseCoordinates.x, 2) + Mathf.Pow(mouseCoordinates.y, 2)))) * Mathf.Rad2Deg;
+        angle = Mathf.Acos(mouseCoordinates.x / (Mathf.Sqrt(Mathf.Pow(mouseCoordinates.x, 2) + Mathf.Pow(mouseCoordinates.y, 2)))) * Mathf.Rad2Deg;
 
         if (mouseCoordinates.y >= 0)
         {

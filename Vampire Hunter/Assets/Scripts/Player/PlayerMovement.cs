@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     bool evadeAgain = false; // boolean to deactivade evasion next frame
     int evadeCount; // amount of remaining evasion frames
     bool walk = false; // boolean with walking option
+    private bool tempDisableAnim = true;
     
     // modifiable variables
     public float moveLimiter = 0.7f; // movement speed limiter for keyboard inputs
@@ -263,10 +264,23 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PauseMenu.disableAllPause == true)
+        if (PauseMenu.disableAllPause == true || PlayerCombat.isAttacking == true || PlayerCombat.aiming == true || PlayDialogue.disableAllDialogue == true)
         {
+            body.velocity = new Vector2(0, 0);
+            if (tempDisableAnim)
+            {
+                PlayerAnimation.walk_left = false;
+                PlayerAnimation.walk_right = false;
+                PlayerAnimation.walk_up = false;
+                PlayerAnimation.walk_down = false;
+                PlayerAnimation.idle = true;
+                PlayerAnimation.dash = false;
+                tempDisableAnim = false;
+            }
             return;
         }
+
+        tempDisableAnim = true;
 
         // if keyboard is used
         if (controller == false)

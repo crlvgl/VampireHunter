@@ -14,6 +14,8 @@ public class PlayerAnimation : MonoBehaviour
     public static bool melee;
     public static bool ranged;
     public static bool death;
+    public static bool flip;
+    private bool thisScript;
 
     SpriteRenderer sprite;
 
@@ -23,6 +25,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        Debug.Log(animator.runtimeAnimatorController.name);
     }
 
     // Update is called once per frame
@@ -31,6 +34,15 @@ public class PlayerAnimation : MonoBehaviour
         //Debug.Log(walk_left + " " + walk_up + " " + walk_down + " " + dash + " " + idle);
         if (walk_left || walk_right)
         {
+            if (walk_right)
+            {
+                flip = true;
+                thisScript = true;
+            }
+            else
+            {
+                flip = false;
+            }
             animator.SetBool("Walking_Left", true);
             animator.SetBool("Walking_Up", false);
             animator.SetBool("Walking_Down", false);
@@ -45,6 +57,10 @@ public class PlayerAnimation : MonoBehaviour
         }
         else if (walk_up)
         {
+            if (thisScript)
+            {
+                flip = false;
+            }
             animator.SetBool("Walking_Left", false);
             animator.SetBool("Walking_Up", true);
             animator.SetBool("Walking_Down", false);
@@ -59,6 +75,10 @@ public class PlayerAnimation : MonoBehaviour
         }
         else if (walk_down)
         {
+            if (thisScript)
+            {
+                flip = false;
+            }
             animator.SetBool("Walking_Left", false);
             animator.SetBool("Walking_Up", false);
             animator.SetBool("Walking_Down", true);
@@ -73,6 +93,10 @@ public class PlayerAnimation : MonoBehaviour
         }
         else if(idle)
         {
+            if (thisScript)
+            {
+                flip = false;
+            }
             animator.SetBool("Walking_Left", false);
             animator.SetBool("Walking_Up", false);
             animator.SetBool("Walking_Down", false);
@@ -87,6 +111,10 @@ public class PlayerAnimation : MonoBehaviour
         }
         else if(dash)
         {
+            if (thisScript)
+            {
+                flip = false;
+            }
             animator.SetBool("Walking_Left", false);
             animator.SetBool("Walking_Up", false);
             animator.SetBool("Walking_Down", false);
@@ -129,6 +157,7 @@ public class PlayerAnimation : MonoBehaviour
         }
         else if (death)
         {
+            flip = false;
             animator.SetBool("Walking_Left", false);
             animator.SetBool("Walking_Up", false);
             animator.SetBool("Walking_Down", false);
@@ -142,7 +171,7 @@ public class PlayerAnimation : MonoBehaviour
                 StartCoroutine(Death());
             }
         }
-        if (walk_right)
+        if (flip)
         {
             sprite.flipX = true;
             Debug.Log("works");
