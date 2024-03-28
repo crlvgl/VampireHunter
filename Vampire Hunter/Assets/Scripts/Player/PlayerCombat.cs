@@ -12,11 +12,19 @@ public class PlayerCombat : MonoBehaviour
     public float timeBetweenShots = 1f;
     public GameObject line;
     public GameObject projectile;
+    private bool controller = false;
+    private List<GameObject> enemies;
 
     // Start is called before the first frame update
     void Start()
     {
         line = this.transform.Find("Line").gameObject;
+
+        enemies = new List<GameObject>();
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            enemies.Add(enemy);
+        }
     }
 
     // Update is called once per frame
@@ -30,18 +38,33 @@ public class PlayerCombat : MonoBehaviour
         {
             if (!isAttacking)
             {
+                if (Input.GetMouseButton(0))
+                {
+                    controller = false;
+                }
+                else if (Input.GetKey("joystick button 2"))
+                {
+                    controller = true;
+                }
                 isAttacking = true;
                 StartCoroutine(MeleeAttack());
                 PlayerAnimation.melee = true;
             }
         }
         
-        if (Input.GetMouseButton(1)) //|| Input.GetAxis("RightTrigger") > 0)
+        if (Input.GetMouseButton(1) || Input.GetAxis("RightTrigger") >  0)
         {
-            //Debug.Log(true);
             line.SetActive(true);
+            if (Input.GetMouseButton(1))
+            {
+                AimLine.controller = false;
+            }
+            else if (Input.GetAxis("RightTrigger") > 0)
+            {
+                AimLine.controller = true;
+            }
             aiming = true;
-            if (!isAttacking && (Input.GetMouseButton(0) || Input.GetKeyDown("joystick button 2")))
+            if (!isAttacking && (Input.GetMouseButton(0) || Input.GetKey("joystick button 2")))
             {
                 isAttacking = true;
                 StartCoroutine(RangedAttack());
@@ -66,10 +89,11 @@ public class PlayerCombat : MonoBehaviour
         PlayerAnimation.walk_down = false;
         PlayerAnimation.idle = false;
         PlayerAnimation.dash = false;
-        if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
+        if ((Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x && !controller) || (Input.GetAxis("Horizontal") < 0 && controller))
         {
             PlayerAnimation.flip = true;
         }
+        DoMeleeDamage();
         yield return new WaitForSeconds(0.6f);
         PlayerAnimation.ranged = false;
         PlayerAnimation.melee = false;
@@ -94,14 +118,21 @@ public class PlayerCombat : MonoBehaviour
         PlayerAnimation.walk_down = false;
         PlayerAnimation.idle = false;
         PlayerAnimation.dash = false;
-        if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x)
+        if ((Camera.main.ScreenToWorldPoint(Input.mousePosition).x < transform.position.x && !AimLine.controller) || (Input.GetAxis("Horizontal") < 0 && AimLine.controller))
         {
             PlayerAnimation.flip = true;
         }
         yield return new WaitForSeconds(0.5f);
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouse2d = new Vector2(mousePos.x, mousePos.y);
-        __staticInfoClass.projectileDirection = (mouse2d - new Vector2(transform.position.x, transform.position.y)).normalized;
+        if (!AimLine.controller)
+        {
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouse2d = new Vector2(mousePos.x, mousePos.y);
+            __staticInfoClass.projectileDirection = (mouse2d - new Vector2(transform.position.x, transform.position.y)).normalized;
+        }
+        else if (AimLine.controller)
+        {
+            __staticInfoClass.projectileDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        }
         GameObject newProjectile = Instantiate(projectile, this.transform.position, Quaternion.Euler(0, 0, __staticInfoClass.projectileAngle));
         yield return new WaitForSeconds(0.1f);
         PlayerAnimation.ranged = false;
@@ -116,5 +147,16 @@ public class PlayerCombat : MonoBehaviour
         PlayerAnimation.flip = false;
         yield return new WaitForSeconds(timeBetweenShots-0.6f);
         isAttacking = false;
+    }
+
+    void DoMeleeDamage()
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector2.Distance(enemy.transform.position, this.transform.position) < 1.5f)
+            {
+                enemy.GetComponent<EnemyStatus>().health -= 20;
+            }
+        }
     }
 }

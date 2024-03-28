@@ -174,7 +174,6 @@ public class PlayerAnimation : MonoBehaviour
         if (flip)
         {
             sprite.flipX = true;
-            Debug.Log("works");
         }
         else
         {
