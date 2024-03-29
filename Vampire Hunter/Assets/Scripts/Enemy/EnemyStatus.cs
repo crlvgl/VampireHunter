@@ -15,6 +15,22 @@ public class EnemyStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health <= 0)
+        {
+            StartCoroutine(Death());
+        }
+    }
+
+    IEnumerator Death()
+    {
+        EnemyAnimation.death = true;
+        EnemyAnimation.walk_left = false;
+        EnemyAnimation.walk_right = false;
+        EnemyAnimation.walk_up = false;
+        EnemyAnimation.walk_down = false;
+        EnemyAnimation.idle = false;
+        EnemyAnimation.attack = false;
+        yield return new WaitForSeconds(1.45f);
+        Destroy(this.gameObject);
     }
 }
