@@ -22,4 +22,7 @@ public static class __staticInfoClass
     public static float projectileScale = 0;
     public static float projectileAngle;
     public static Vector2 crystalProjectileDirection;
+
+    // Epilogue
+    public static bool epilogue = false;
 }

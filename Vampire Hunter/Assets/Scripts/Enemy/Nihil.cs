@@ -6,6 +6,7 @@ public class Nihil : MonoBehaviour
 {
     private SpriteRenderer whiteScreen;
     public GameObject deathScreen;
+    public GameObject epilogue;
 
     public static int health = 1000;
     public float fadeSpeed = 1.0f;
@@ -16,7 +17,10 @@ public class Nihil : MonoBehaviour
     {
         whiteScreen = GameObject.Find("WhiteScreen").gameObject.GetComponent<SpriteRenderer>();
         deathScreen = GameObject.Find("DeathScreen").gameObject;
+        epilogue = GameObject.Find("Epilogue").gameObject;
+        
         deathScreen.SetActive(false);
+        epilogue.SetActive(false);
     }
 
     // Update is called once per frame
@@ -40,6 +44,8 @@ public class Nihil : MonoBehaviour
         {
             Debug.Log("works");
             deathScreen.SetActive(true);
+            epilogue.SetActive(true);
+            __staticInfoClass.epilogue = true;
             Destroy(player);
             Destroy(this.gameObject);
         }

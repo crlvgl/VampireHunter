@@ -28,13 +28,15 @@ public class SaveAndLoad : MonoBehaviour
 
     private void LoadGame()
     {
+        __staticInfoClass.timeToLoad = 3f;
+        __staticInfoClass.sceneToLoad = PlayerPrefs.GetString("openScene");
         // you still gotta implenent this
         // need to look what you need
     }
 
     private void SaveGame()
     {
-        PlayerPrefs.SetString("openScene", UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetString("openScene", UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);
         // you still gotta implenent this
         // need to look what you need
         // will be the same as above
