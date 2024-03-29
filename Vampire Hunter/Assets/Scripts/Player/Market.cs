@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Market : MonoBehaviour
 {
     [Header("Objects needed")]
@@ -13,6 +14,7 @@ public class Market : MonoBehaviour
     public GameObject playerCombat;
     private SpriteRenderer blackScreen;
     private SpriteRenderer blackScreen2;
+    public UnityEngine.Rendering.Universal.Light2D lighting;
 
     [Header("Variables")]
     public float waitTime = 5.0f;
@@ -25,6 +27,8 @@ public class Market : MonoBehaviour
     private bool activeCoordinator = false;
     private bool fadeToBlack = false;
     private bool fadeFromBlack = false;
+    private bool turnLightOn = false;
+    public float fadeSpeedLight = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,7 @@ public class Market : MonoBehaviour
         blackScreen2 = GameObject.Find("BlackScreen2").gameObject.GetComponent<SpriteRenderer>();
         originalCamPos1 = marketCam.transform.position;
         originalCamPos2 = fightCam.transform.position;
+        __staticInfoClass.projectileScale = 6;
     }
 
     // Update is called once per frame
@@ -51,6 +56,11 @@ public class Market : MonoBehaviour
         if (blackScreen2.color.a > 0 && fadeFromBlack)
         {
             blackScreen2.color = new Color(0.0f, 0.0f, 0.0f, (blackScreen2.color.a - Time.deltaTime * fadeSpeed));
+        }
+
+        if (lighting.intensity < 1 && turnLightOn)
+        {
+            lighting.intensity += Time.deltaTime * fadeSpeedLight;
         }
 
         if (shakeDuration > 0)
@@ -81,6 +91,7 @@ public class Market : MonoBehaviour
         Debug.Log(blackScreen.color.a);
         fadeToBlack = true;
         yield return new WaitForSeconds(3.0f);
+        lighting.intensity = 0;
         nihil.SetActive(true);
         crystals.SetActive(true);
         playerCombat.SetActive(true);
@@ -91,6 +102,8 @@ public class Market : MonoBehaviour
         Debug.Log(blackScreen2.color.a);
         fadeFromBlack = true;
         yield return new WaitForSeconds(1.0f);
+        turnLightOn = true;
+        yield return new WaitForSeconds(0.3f);
         PauseMenu.disableAllPause = false;
         PlayDialogue.disableAllDialogue = false;
     }

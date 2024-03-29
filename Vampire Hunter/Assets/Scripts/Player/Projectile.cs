@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     private Vector2 direction;
     public float speed = 5f;
     private List<GameObject> enemies;
+    private float distanceToKill = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,12 @@ public class Projectile : MonoBehaviour
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             enemies.Add(enemy);
+        }
+
+        if (__staticInfoClass.projectileScale != 0)
+        {
+            this.transform.localScale = new Vector3(__staticInfoClass.projectileScale, __staticInfoClass.projectileScale, this.transform.localScale.z);
+            distanceToKill = 10f;
         }
     }
 
@@ -37,7 +44,7 @@ public class Projectile : MonoBehaviour
     {
         foreach (GameObject enemy in enemies)
         {
-            if (Vector2.Distance(this.transform.position, enemy.transform.position) < 0.5f)
+            if (Vector2.Distance(this.transform.position, enemy.transform.position) < distanceToKill)
             {
                 enemy.GetComponent<EnemyStatus>().health -= 25;
                 Destroy(this.gameObject);

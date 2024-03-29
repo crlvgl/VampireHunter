@@ -922,6 +922,8 @@ GameObject:
   - component: {fileID: 8110304362657556504}
   - component: {fileID: 4310461656804778513}
   - component: {fileID: 7200429409891329515}
+  - component: {fileID: 8681486507768119206}
+  - component: {fileID: 5994172246830049330}
   m_Layer: 0
   m_Name: FangsArmed
   m_TagString: Untagged
@@ -1156,6 +1158,33 @@ MonoBehaviour:
   timeBetweenShots: 1
   line: {fileID: 0}
   projectile: {fileID: 7701633572827115216, guid: 731bd77c3d1bdfb4ca19ee32d4f49b55, type: 3}
+--- !u!114 &8681486507768119206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037944084775758804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07bb00d07ef81749a6959c405822f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  health: 100
+--- !u!114 &5994172246830049330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037944084775758804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72fb11d9d9948fe4d82c7bed53c5d338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnScreen: {fileID: 0}
 --- !u!1 &2463886141230529836
 GameObject:
   m_ObjectHideFlags: 0

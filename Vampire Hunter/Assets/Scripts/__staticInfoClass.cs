@@ -19,5 +19,7 @@ public static class __staticInfoClass
 
     // for Player Combat
     public static Vector2 projectileDirection;
+    public static float projectileScale = 0;
     public static float projectileAngle;
+    public static Vector2 crystalProjectileDirection;
 }

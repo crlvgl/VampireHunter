@@ -5,11 +5,15 @@ using UnityEngine;
 public class EnemyStatus : MonoBehaviour
 {
     public int health = 100;
+    private int nihilHealth = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (this.name == "Crystal")
+        {
+            nihilHealth = Nihil.health / 4;
+        }
     }
 
     // Update is called once per frame
@@ -17,7 +21,15 @@ public class EnemyStatus : MonoBehaviour
     {
         if (health <= 0)
         {
-            StartCoroutine(Death());
+            if (this.name == "Crystal")
+            {
+                Nihil.health -= nihilHealth;
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                StartCoroutine(Death());
+            }
         }
     }
 

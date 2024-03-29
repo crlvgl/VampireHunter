@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject projectile;
     private bool controller = false;
     private List<GameObject> enemies;
+    private float distanceToKill = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,10 @@ public class PlayerCombat : MonoBehaviour
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             enemies.Add(enemy);
+        }
+        if (__staticInfoClass.projectileScale != 0)
+        {
+            distanceToKill = distanceToKill * 5;
         }
     }
 
@@ -153,7 +158,7 @@ public class PlayerCombat : MonoBehaviour
     {
         foreach (GameObject enemy in enemies)
         {
-            if (Vector2.Distance(enemy.transform.position, this.transform.position) < 1.5f)
+            if (Vector2.Distance(enemy.transform.position, this.transform.position) < distanceToKill)
             {
                 enemy.GetComponent<EnemyStatus>().health -= 20;
             }
