@@ -16,14 +16,14 @@ public class ProximityTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(this.transform.position, player.transform.position) <= treshhold)
+        if (Vector2.Distance(new Vector2(this.transform.position.x, this.transform.position.y - 10.0f), player.transform.position) <= treshhold)
         {
-            this.transform.Find("Canvas").gameObject.SetActive(true);
+            this.transform.Find("Square").gameObject.SetActive(true);
             this.transform.GetComponent<SceneManager>().enabled = true;
         }
         else
         {
-            this.transform.Find("Canvas").gameObject.SetActive(true);
+            this.transform.Find("Square").gameObject.SetActive(false);
             this.transform.GetComponent<SceneManager>().enabled = false;
         }
     }

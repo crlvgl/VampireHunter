@@ -88,7 +88,6 @@ public class Market : MonoBehaviour
         PlayDialogue.disableAllDialogue = true;
         Shake(16.0f);
         yield return new WaitForSeconds(5.0f);
-        Debug.Log(blackScreen.color.a);
         fadeToBlack = true;
         yield return new WaitForSeconds(3.0f);
         lighting.intensity = 0;
@@ -99,7 +98,6 @@ public class Market : MonoBehaviour
         marketCam.gameObject.SetActive(false);
         playerPeaceful.SetActive(false);
         yield return new WaitForSeconds(2.0f);
-        Debug.Log(blackScreen2.color.a);
         fadeFromBlack = true;
         yield return new WaitForSeconds(1.0f);
         turnLightOn = true;

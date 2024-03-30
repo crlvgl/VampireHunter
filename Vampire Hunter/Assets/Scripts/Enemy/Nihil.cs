@@ -42,7 +42,6 @@ public class Nihil : MonoBehaviour
         }
         else if (whiteScreen.color.a >= 1.0f)
         {
-            Debug.Log("works");
             deathScreen.SetActive(true);
             epilogue.SetActive(true);
             __staticInfoClass.epilogue = true;

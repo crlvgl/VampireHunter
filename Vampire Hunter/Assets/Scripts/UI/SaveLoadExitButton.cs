@@ -82,6 +82,7 @@ public class SaveLoadExitButton : MonoBehaviour
         if (ButtonMode == "save")
         {
             saveGame = true;
+            Debug.Log("Game saved");
         }
         else if (ButtonMode == "exit")
         {
@@ -93,6 +94,7 @@ public class SaveLoadExitButton : MonoBehaviour
         else if (ButtonMode == "load")
         {
             loadGame = true;
+            Debug.Log("Load Game");
         }
     }
 
@@ -114,7 +116,6 @@ public class SaveLoadExitButton : MonoBehaviour
         {
             sprite.sprite = newSprite;
         }
-        Debug.Log(this.name);
         if (enableAudio)
         {
             audioSource.Play();

@@ -143,8 +143,15 @@ public class StartMenu : MonoBehaviour
 
     IEnumerator LoadSavedScene()
     {
-        __staticInfoClass.loadScene = true;
-        __staticInfoClass.sceneToLoad = "Assets/Scenes/" + PlayerPrefs.GetString("openScene") + ".unity";
+        if (PlayerPrefs.GetString("openScene") == "" || PlayerPrefs.GetString("openScene") == "none" || PlayerPrefs.GetString("openScene") == null)
+        {
+            Debug.Log("no Scene saved");
+            yield break;
+        }
+
+        Debug.Log(PlayerPrefs.GetString("openScene"));
+        __staticInfoClass.timeToLoad = 3f;
+        __staticInfoClass.sceneToLoad = PlayerPrefs.GetString("openScene");
 
         AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pathToScene);
 

@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/UI/LoadingScreen.unity
     guid: 4792ae7bb7944c747826c301b9820a2e
   - enabled: 1
+    path: Assets/Scenes/Peaceful/Church.unity
+    guid: 2389c1135cfd29b49814079aca618bf9
+  - enabled: 1
+    path: Assets/Scenes/Dungeons/Dungeon1.unity
+    guid: 63b3eaa6f63c4834089ac1cb8e183f62
+  - enabled: 1
     path: Assets/Scenes/testingScene.unity
     guid: cab83283dfcc677468b1adf7a6ff8995
   m_configObjects: {}

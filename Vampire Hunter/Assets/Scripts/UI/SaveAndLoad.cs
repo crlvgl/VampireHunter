@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SaveAndLoad : MonoBehaviour
 {
+    public string pathToScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +20,33 @@ public class SaveAndLoad : MonoBehaviour
             SaveGame();
             SaveLoadExitButton.saveGame = false;
         }
-        else if (SaveLoadExitButton.loadGame == true || __staticInfoClass.loadScene == true)
+        else if (SaveLoadExitButton.loadGame == true)
         {
-            LoadGame();
+            StartCoroutine(LoadGame());
             SaveLoadExitButton.loadGame = false;
-            __staticInfoClass.loadScene = false;
         }
     }
 
-    private void LoadGame()
+    private IEnumerator LoadGame()
     {
+        Debug.Log("Loading Game");
         __staticInfoClass.timeToLoad = 3f;
         __staticInfoClass.sceneToLoad = PlayerPrefs.GetString("openScene");
+
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pathToScene);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
         // you still gotta implenent this
         // need to look what you need
     }
 
     private void SaveGame()
     {
+        Debug.Log("Saving Game");
+        
         PlayerPrefs.SetString("openScene", UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);
         // you still gotta implenent this
         // need to look what you need

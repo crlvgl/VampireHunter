@@ -27,7 +27,16 @@ public class CrystalProjectile : MonoBehaviour
         if (Vector2.Distance(this.transform.position, fangs.transform.position) < 5.0f)
         {
             fangs.GetComponent<PlayerStatus>().health -= 10;
-            Debug.Log("kill");
+            Destroy(this.gameObject);
+        }
+        else if (Vector2.Distance(this.transform.position, new Vector2(fangs.transform.position.x, fangs.transform.position.y+2.0f)) < 5.0f)
+        {
+            fangs.GetComponent<PlayerStatus>().health -= 10;
+            Destroy(this.gameObject);
+        }
+        else if (Vector2.Distance(this.transform.position, new Vector2(fangs.transform.position.x, fangs.transform.position.y-2.0f)) < 5.0f)
+        {
+            fangs.GetComponent<PlayerStatus>().health -= 10;
             Destroy(this.gameObject);
         }
 

@@ -17,7 +17,7 @@ public class DialoguePopulator : MonoBehaviour
     public string dialogueTrigger;
     [Tooltip("Check if this is the last dialogue in the conversation, will trigger the end of the conversation")]
     public bool lastDialogue = false;
-    private bool copied = false;
+    public bool copied = false;
 
     // Start is called before the first frame update
     void Start()

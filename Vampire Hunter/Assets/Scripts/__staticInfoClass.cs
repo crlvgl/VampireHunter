@@ -3,7 +3,6 @@ using UnityEngine;
 public static class __staticInfoClass
 {
     // for Loading Scenes
-    public static bool loadScene = false;
     public static string sceneToLoad = "none";
     public static float timeToLoad = 0;
 
@@ -16,12 +15,14 @@ public static class __staticInfoClass
     public static string rightDialogueName;
     public static Sprite rightSprite;
     public static bool lastDialogue = false;
+    public static int randomLength;
 
     // for Player Combat
     public static Vector2 projectileDirection;
-    public static float projectileScale = 0;
+    public static float projectileScale = 3;
     public static float projectileAngle;
     public static Vector2 crystalProjectileDirection;
+    public static int killed;
 
     // Epilogue
     public static bool epilogue = false;

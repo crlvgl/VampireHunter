@@ -8,10 +8,14 @@ public class Projectile : MonoBehaviour
     public float speed = 5f;
     private List<GameObject> enemies;
     private float distanceToKill = 1.5f;
+    public GameObject fangs;
+    public float destroyDistance;
 
     // Start is called before the first frame update
     void Start()
     {
+        fangs = GameObject.Find("Fangs 1").gameObject;
+
         direction = __staticInfoClass.projectileDirection;
 
         enemies = new List<GameObject>();
@@ -38,6 +42,11 @@ public class Projectile : MonoBehaviour
         this.transform.position += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
 
         CheckDamage();
+
+        if (Vector2.Distance(this.transform.position, fangs.transform.position) > destroyDistance)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void CheckDamage()

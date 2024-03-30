@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d308c82f1e31f0b45aefc6be1fd62278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToScene: Assets/Scenes/LoadingScreen.unity
+  pathToScene: Assets/Scenes/UI/LoadingScreen.unity
   pathToFirstScene: 
   LoadMode: load
   changeColor: 0
@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathToScene: Assets/Scenes/testingScene.unity
+  timeToLoad: 3
 --- !u!4 &174815846
 Transform:
   m_ObjectHideFlags: 0
@@ -474,8 +475,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Load Save
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56e54aa20d3a48e4688e57c62ecc302d, type: 2}
+  m_sharedMaterial: {fileID: -4598613998820240833, guid: 56e54aa20d3a48e4688e57c62ecc302d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1019,7 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathToScene: Assets/Scenes/UI/LoadingScreen.unity
-  pathToFirstScene: Assets/Scenes/testingScene.unity
+  pathToFirstScene: Assets/Scenes/Peaceful/Church.unity
   LoadMode: new
   changeColor: 0
   colorShift: {x: 0, y: 0, z: 0}
@@ -1064,7 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d308c82f1e31f0b45aefc6be1fd62278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToScene: Assets/Scenes/LoadingScreen.unity
+  pathToScene: Assets/Scenes/UI/LoadingScreen.unity
   pathToFirstScene: 
   LoadMode: quit
   changeColor: 0
@@ -1425,8 +1426,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Exit Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56e54aa20d3a48e4688e57c62ecc302d, type: 2}
+  m_sharedMaterial: {fileID: -4598613998820240833, guid: 56e54aa20d3a48e4688e57c62ecc302d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1559,8 +1560,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 56e54aa20d3a48e4688e57c62ecc302d, type: 2}
+  m_sharedMaterial: {fileID: -4598613998820240833, guid: 56e54aa20d3a48e4688e57c62ecc302d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

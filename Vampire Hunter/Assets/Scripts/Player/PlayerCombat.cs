@@ -13,7 +13,6 @@ public class PlayerCombat : MonoBehaviour
     public GameObject line;
     public GameObject projectile;
     private bool controller = false;
-    private List<GameObject> enemies;
     private float distanceToKill = 1.5f;
 
     // Start is called before the first frame update
@@ -21,14 +20,9 @@ public class PlayerCombat : MonoBehaviour
     {
         line = this.transform.Find("Line").gameObject;
 
-        enemies = new List<GameObject>();
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            enemies.Add(enemy);
-        }
         if (__staticInfoClass.projectileScale != 0)
         {
-            distanceToKill = distanceToKill * 5;
+            distanceToKill = distanceToKill * 15;
         }
     }
 
@@ -156,7 +150,7 @@ public class PlayerCombat : MonoBehaviour
 
     void DoMeleeDamage()
     {
-        foreach (GameObject enemy in enemies)
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             if (Vector2.Distance(enemy.transform.position, this.transform.position) < distanceToKill)
             {

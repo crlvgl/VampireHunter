@@ -10,8 +10,15 @@ public class Respawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        respawnScreen = this.transform.Find("Main Camera").gameObject.transform.Find("RespawnScreen").gameObject;
-        respawnScreen.SetActive(false);
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Marketplace")
+        {
+            respawnScreen = GameObject.Find("FightCamera").gameObject.transform.Find("RespawnScreen").gameObject;
+        }
+        else
+        {
+            respawnScreen = GameObject.Find("Main Camera").gameObject.transform.Find("RespawnScreen").gameObject;
+            respawnScreen.SetActive(false);
+        }
     }
 
     // Update is called once per frame

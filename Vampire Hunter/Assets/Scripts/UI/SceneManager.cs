@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneManager : MonoBehaviour
 {
     public string pathToScene;
+    public float timeToLoad = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,10 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator LoadSceneAsync()
     {
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pathToScene);
+        __staticInfoClass.sceneToLoad = pathToScene;
+        __staticInfoClass.timeToLoad = timeToLoad;
+
+        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Assets/Scenes/UI/LoadingScreen.unity");
 
         while (!asyncLoad.isDone)
         {

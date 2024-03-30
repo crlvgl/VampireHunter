@@ -33,6 +33,8 @@ public class PlayDialogue : MonoBehaviour
     private static Color humanColor;
     public Color fangsColorTemp = new Color(196, 128, 255, 255);
     private static Color fangsColor;
+    public static bool random = false;
+    private static int counter = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +48,7 @@ public class PlayDialogue : MonoBehaviour
         humanColor = humanColorTemp;
         fangsColor = fangsColorTemp;
 
-        TextBox = this.transform.Find("Main Camera").gameObject.transform.Find("TextBox").gameObject;
+        TextBox = GameObject.Find("Main Camera").gameObject.transform.Find("TextBox").gameObject;
         dialogueText = TextBox.transform.Find("Canvas").gameObject.transform.Find("TextBoxText").GetComponent<TMP_Text>();
         leftName = TextBox.transform.Find("NameLeft").gameObject.transform.Find("Canvas").gameObject.transform.Find("NameText").GetComponent<TMP_Text>();
         rightName = TextBox.transform.Find("NameRight").gameObject.transform.Find("Canvas").gameObject.transform.Find("NameText").GetComponent<TMP_Text>();
@@ -123,7 +125,7 @@ public class PlayDialogue : MonoBehaviour
     }
 
     // Triggered by other Dialogues, starts entire Dialogue sequence
-    static void InitiateDialogue()
+    public static void InitiateDialogue()
     {
         disableAllDialogue = true;
         TextBox.SetActive(true);
@@ -168,6 +170,7 @@ public class PlayDialogue : MonoBehaviour
 
         if (side == "left")
         {
+            leftDialogue = __staticInfoClass.leftDialogue;
             foreach (string talk in leftDialogue)
             {
                 dialogueQueue.Enqueue(talk);
@@ -195,6 +198,7 @@ public class PlayDialogue : MonoBehaviour
         }
         else if (side == "right")
         {
+            rightDialogue = __staticInfoClass.rightDialogue;
             foreach (string talk in rightDialogue)
             {
                 dialogueQueue.Enqueue(talk);
@@ -226,15 +230,36 @@ public class PlayDialogue : MonoBehaviour
 
     public static void ContinueDialogue()
     {
-        if (dialogueQueue.Count == 0 && __staticInfoClass.lastDialogue)
+        if (!random)
         {
-            EndDialogue();
-            return;
+            if (dialogueQueue.Count == 0 && __staticInfoClass.lastDialogue)
+            {
+                EndDialogue();
+                return;
+            }
+            else if (dialogueQueue.Count == 0)
+            {
+                ChangeSide();
+                return;
+            }
         }
-        else if (dialogueQueue.Count == 0)
+        else if (random)
         {
-            ChangeSide();
-            return;
+            if (dialogueQueue.Count == 0)
+            {
+                if (counter == __staticInfoClass.randomLength)
+                {
+                    EndDialogueRandom();
+                    counter = 1;
+                    return;
+                }
+                else if (counter < __staticInfoClass.randomLength)
+                {
+                    ChangeSideRandom();
+                    counter += 1;
+                    return;
+                }
+            }
         }
         dialogueText.text = dialogueQueue.Dequeue();
     }
@@ -253,5 +278,20 @@ public class PlayDialogue : MonoBehaviour
     {
         StartTalking();
         SetTrigger();
+    }
+
+    static void EndDialogueRandom()
+    {
+        TextBox.SetActive(false);
+        dialogueText.text = "";
+        side = "left";
+        disableAllDialogue = false;
+        Debug.Log("End of dialogue");
+        random = false;
+    }
+
+    static void ChangeSideRandom()
+    {
+        StartTalking();
     }
 }
