@@ -35,6 +35,7 @@ public class PlayDialogue : MonoBehaviour
     private static Color fangsColor;
     public static bool random = false;
     private static int counter = 1;
+    private bool notReady = true;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,8 @@ public class PlayDialogue : MonoBehaviour
         triggerListNamesQueue = new Queue<string>();
         triggerListLengthsQueue = new Queue<int>();
         dialogueTriggerQueue = new Queue<string>();
+
+        triggerList = new List<(string triggerName, int triggerLength)>();
 
         vampireColor = vampireColorTemp;
         humanColor = humanColorTemp;
@@ -54,25 +57,6 @@ public class PlayDialogue : MonoBehaviour
         rightName = TextBox.transform.Find("NameRight").gameObject.transform.Find("Canvas").gameObject.transform.Find("NameText").GetComponent<TMP_Text>();
         leftPortrait = TextBox.transform.Find("PortraitLeft").gameObject.GetComponent<SpriteRenderer>();
         rightPortrait = TextBox.transform.Find("PortraitRight").gameObject.GetComponent<SpriteRenderer>();
-
-        foreach (string temp in triggerListNames)
-        {
-            triggerListNamesQueue.Enqueue(temp);
-        }
-        foreach (int temp in triggerListLengths)
-        {
-            triggerListLengthsQueue.Enqueue(temp);
-        }
-        for (int i = 0; i < triggerListNames.Length; i++)
-        {
-            triggerList.Add((triggerListNamesQueue.Dequeue(), triggerListLengthsQueue.Dequeue()));
-        }
-        foreach ((string triggerName, int triggerLength) in triggerList)
-        {
-            dialogueTriggerQueue.Enqueue(triggerName);
-        }
-
-        SetTrigger();
     }
 
     // Update is called once per frame
@@ -81,6 +65,34 @@ public class PlayDialogue : MonoBehaviour
         if (PauseMenu.disableAllPause)
         {
             return;
+        }
+
+        if (notReady)
+        {
+            notReady = false;
+
+            foreach (string temp in triggerListNames)
+            {
+                triggerListNamesQueue.Enqueue(temp);
+                Debug.Log("enqueued triggerListNames");
+            }
+            foreach (int temp in triggerListLengths)
+            {
+                triggerListLengthsQueue.Enqueue(temp);
+                Debug.Log("enqueued triggerListLengths");
+            }
+            for (int i = 0; i < triggerListNames.Length; i++)
+            {
+                triggerList.Add((triggerListNamesQueue.Dequeue(), triggerListLengthsQueue.Dequeue()));
+                Debug.Log("Built triggerList");
+            }
+            foreach ((string triggerName, int triggerLength) in triggerList)
+            {
+                dialogueTriggerQueue.Enqueue(triggerName);
+                Debug.Log("all set");
+            }
+
+            SetTrigger();
         }
     }
 

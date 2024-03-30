@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private List<GameObject> enemies;
     private float distanceToKill = 1.5f;
     public GameObject fangs;
-    public float destroyDistance;
+    public float destroyDistance = 20000.0f;
 
     // Start is called before the first frame update
     void Start()

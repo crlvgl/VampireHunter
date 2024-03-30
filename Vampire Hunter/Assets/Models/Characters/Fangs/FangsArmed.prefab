@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 7200429409891329515}
   - component: {fileID: 8681486507768119206}
   - component: {fileID: 5994172246830049330}
+  - component: {fileID: 3339353306214603000}
   m_Layer: 0
   m_Name: FangsArmed
   m_TagString: Untagged
@@ -311,7 +312,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037944084775758804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b95a72eb63e451f49b8c82785e3152d4, type: 3}
   m_Name: 
@@ -363,6 +364,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnScreen: {fileID: 0}
+--- !u!114 &3339353306214603000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037944084775758804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0b682cf000d6d4db7c5261c5f5e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: []
+  vampireColorTemp: {r: 255, g: 128, b: 128, a: 255}
+  humanColorTemp: {r: 98, g: 160, b: 240, a: 255}
+  fangsColorTemp: {r: 196, g: 128, b: 255, a: 255}
 --- !u!1 &3898171990034154586
 GameObject:
   m_ObjectHideFlags: 0

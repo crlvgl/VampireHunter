@@ -6,7 +6,7 @@ public class EnemyStatus : MonoBehaviour
 {
     public int health = 100;
     private int nihilHealth = 0;
-    private GameObject artifact;
+    public GameObject artifact;
 
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,6 @@ public class EnemyStatus : MonoBehaviour
         if (this.name == "Crystal")
         {
             nihilHealth = Nihil.health / 4;
-        }
-        if (this.name == "SpecialVampir")
-        {
-            artifact = GameObject.Find("Artifact");
         }
     }
 
@@ -50,7 +46,10 @@ public class EnemyStatus : MonoBehaviour
         yield return new WaitForSeconds(1.45f);
         __staticInfoClass.killed += 1;
         Debug.Log(__staticInfoClass.killed);
-        artifact.SetActive(true);
+        if (this.name == "SpecialVampire")
+        {
+            artifact.SetActive(true);
+        }
         Destroy(this.gameObject);
     }
 }

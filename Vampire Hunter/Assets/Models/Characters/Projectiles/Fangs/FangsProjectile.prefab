@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  fangs: {fileID: 0}
+  destroyDistance: 200
 --- !u!61 &7483869149476243586
 BoxCollider2D:
   m_ObjectHideFlags: 0

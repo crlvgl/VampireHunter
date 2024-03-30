@@ -17,6 +17,12 @@ public static class __staticInfoClass
     public static bool lastDialogue = false;
     public static int randomLength;
 
+    // for single Dialogue
+    public static string singleTrigger;
+    public static string[] singleDialogue;
+    public static string singleName;
+    public static Sprite singleSprite;
+
     // for Player Combat
     public static Vector2 projectileDirection;
     public static float projectileScale = 3;

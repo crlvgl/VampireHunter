@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 3899300184924940356}
   - component: {fileID: 2303479586980528699}
   - component: {fileID: 3759489128318566948}
+  - component: {fileID: 3375610500432894037}
   m_Layer: 0
   m_Name: FangsUnarmed
   m_TagString: Untagged
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9105639034573444102}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b95a72eb63e451f49b8c82785e3152d4, type: 3}
   m_Name: 
@@ -315,3 +316,19 @@ MonoBehaviour:
   vampireColorTemp: {r: 0.7490196, g: 0.3764706, b: 0.3764706, a: 255}
   humanColorTemp: {r: 0.30588236, g: 0.5019608, b: 0.7490196, a: 255}
   fangsColorTemp: {r: 0.57571715, g: 0.37597853, b: 0.74901974, a: 255}
+--- !u!114 &3375610500432894037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105639034573444102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0b682cf000d6d4db7c5261c5f5e80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: []
+  vampireColorTemp: {r: 255, g: 128, b: 128, a: 255}
+  humanColorTemp: {r: 98, g: 160, b: 240, a: 255}
+  fangsColorTemp: {r: 196, g: 128, b: 255, a: 255}
